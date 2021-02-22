@@ -1,0 +1,335 @@
+$inputBg: #f5f5f5;
+$mainColor: #7f3997;
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$cryptocash-front-primary: mat-palette($mat-purple, 600);
+$cryptocash-front-accent: mat-palette($mat-purple, 600);
+
+// The warn palette is optional (defaults to red).
+$cryptocash-front-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$cryptocash-front-theme: mat-light-theme(
+  (
+    color: (
+      primary: $cryptocash-front-primary,
+      accent: $cryptocash-front-accent,
+      warn: $cryptocash-front-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($cryptocash-front-theme);
+
+.mat-snack-bar-container {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: unset !important;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/////////////////
+// PAGE STYLES //
+////////////////
+
+.page_wrapper {
+  width: 100%;
+  height: 99.9%;
+}
+
+////////////////////
+// ALERTS STYLES //
+///////////////////
+
+.auth_alert {
+  background: #ffffff;
+  box-shadow: 0px 0px 25px 5px rgba(202, 184, 255, 0.25);
+  border-radius: 18px;
+  max-width: 38vw;
+  width: 100%;
+  padding: 3.5vw 4.4vw 2.8vw 4.4vw;
+
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.5vw;
+      line-height: 1.8vw;
+      margin-bottom: 1.8vw;
+    }
+  }
+}
+
+////////////////////
+// INPUTS STYLES //
+///////////////////
+
+.input_line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.input_wrapper {
+  width: 100%;
+  min-height: 3.4vw;
+  position: relative;
+  margin: 0.7vw 0;
+
+  &-half {
+    width: 48%;
+  }
+
+  h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.1vw;
+    color: #000000;
+    margin-bottom: 0.5vw;
+  }
+
+  input,
+  mat-select,
+  textarea {
+    width: 100%;
+    background-color: $inputBg;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 1.25vw 1vw 1.25vw 1.8vw;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8vw;
+    line-height: 1vw;
+    color: #000000;
+  }
+
+  .input_button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1vw;
+    transform: translateY(-50%);
+  }
+}
+
+////////////////////
+// BUTTON STYLES //
+///////////////////
+
+.mat-button.main_btn {
+  background: $mainColor;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1vw;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  height: 5vh;
+
+  &-s {
+    width: 9.3vw;
+  }
+
+  &-r {
+    width: 5vh;
+    margin-right: 0.7vw;
+  }
+}
+
+.mat-stroked-button.main_btn {
+  background: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1vw;
+  color: $mainColor;
+  border: 2px solid $mainColor;
+  cursor: pointer;
+  outline: none;
+  height: 5vh;
+
+  &-s {
+    width: 9.3vw;
+  }
+}
+
+.main_color_text {
+  color: $mainColor;
+}
+
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button {
+  min-width: unset !important;
+  line-height: unset !important;
+  padding: 0 !important;
+}
+
+.card__preview {
+  display: flex;
+  min-width: 25.7vw;
+  height: 15.8vw;
+  background: linear-gradient(90deg, #a8bfff 0%, #884d80 100%);
+  box-shadow: 0px 0px 25px 5px rgba(202, 184, 255, 0.25);
+  border-radius: 16px;
+  padding: 1.5vw 1.8vw 1.8vw 1.8vw;
+  flex-direction: column;
+  margin-right: 1.5vw;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-child {
+      flex-grow: 1;
+      align-items: flex-end;
+    }
+
+    .cardType {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.35vw;
+      line-height: 1.5vw;
+      color: #ffffff;
+    }
+
+    &__block {
+      &:last-child {
+        h4 {
+          text-align: right;
+        }
+
+        h5 {
+          text-align: right;
+        }
+      }
+
+      h4 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.7vw;
+        line-height: 0.8vw;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      h5 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.8vw;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.transactions__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1vw;
+  width: 100%;
+  
+
+  &__element {
+    background: rgba(81, 81, 81, 0.08);
+    border-radius: 10px;
+    width: 100%;
+    min-height: 3vw;
+    padding: 0.4vw 0.6vw;
+    margin-bottom: 0.7vw;
+
+    &__headline {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.25vw;
+
+      .transaction__headline {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 0.8vw;
+        color: #000000;
+      }
+
+      .income {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.8vw;
+        color: #4ba94f;
+      }
+
+      .withdraw {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.8vw;
+        color: #C73F3F;
+      }
+    }
+
+    .transaction__desc {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.7vw;
+      line-height: 0.7vw;
+      color: #000000;
+    }
+  }
+}

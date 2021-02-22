@@ -1,0 +1,87 @@
+<div class="account__details">
+   <div class="account__details__part account__details__part--large">
+      <div class="account__details__part--large__card-info">
+         <div class="card__preview">
+            <div class="card__preview__info">
+               <p class="cardType">{{currentCard?.cardType}}{{currentCard?.currencyType}}</p>
+               <img src="../../../../../assets/images/chip.svg">
+            </div>
+            <div class="card__preview__info">
+               <div class="card__preview__info__block">
+                  <h4>Card holder</h4>
+                  <h5>{{userData?.firstName}} {{userData?.lastName}}</h5>
+               </div>
+
+               <div class="card__preview__info__block">
+                  <h4>Exp. Date</h4>
+                  <h5>{{currentCard?.expirationDate | date: "MM/yy"}}</h5>
+               </div>
+            </div>
+         </div>
+
+         <div class="card__info">
+            <div class="card__info__block">
+               <h2>{{currentCard?.name}}</h2>
+               <p>{{currentCard?.cardNumber}}</p>
+               <p>{{currentCard?.cardType}}</p>
+            </div>
+
+            <div class="card__info__block">
+               <h3>Card Holder</h3>
+               <p>{{userData?.firstName}} {{userData?.lastName}}</p>
+            </div>
+
+            <div class="card__info__block">
+               <h3>Expiration Date</h3>
+               <p>{{currentCard?.expirationDate | date: "MM/yy"}}</p>
+            </div>
+
+            <div class="card__info__block">
+               <h5>Balance</h5>
+               <h4>{{currentCard?.balance}} {{currentCard?.currencyType}}</h4>
+            </div>
+         </div>
+      </div>
+
+      <div class="account__details__part--large__transactions">
+         <p class="account__details__part--large__transactions__headline">Last transactions</p>
+         <div class="transactions__list">
+            <div class="transactions__list__element" *ngFor = "let transaction of currentCardTransactions">
+               <div class="transactions__list__element__headline">
+                  <p class="transaction__headline">{{transaction?.name}}</p>
+                  <p class="income" *ngIf = "transaction.receiverCardId === currentCard._id">+{{transaction?.transactionAmount}} {{currentCard?.currencyType}}</p>
+                  <p class="withdraw" *ngIf = "transaction.senderCardId === currentCard._id">-{{transaction?.transactionAmount}} {{currentCard?.currencyType}}</p>
+               </div>
+               <p class="transactions__desc">{{ transaction?.description }}</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="account__details__part account__details__part--small">
+      <div class="graphical__circle">
+         <h2>Earnings</h2>
+         <div class="out-circle">
+            <div class="out-circle--child">
+               <div class="out-circle--child--child">
+                  <div class="out-circle--child--child--child">
+                     <p>{{currentCard?.earnings}} {{currentCard?.currencyType}}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="graphical__circle">
+         <h2>Spendings</h2>
+         <div class="out-circle">
+            <div class="out-circle--child">
+               <div class="out-circle--child--child">
+                  <div class="out-circle--child--child--child">
+                     <p>{{currentCard?.spendings}} {{currentCard?.currencyType}}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

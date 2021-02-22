@@ -1,0 +1,51 @@
+<div class="page_wrapper">
+   <div class="auth_alert">
+      <form [formGroup] = 'registrationForm'>
+         <h2>Register in system</h2>
+
+         <div class="input_wrapper">
+            <input type="email" placeholder="Email" formControlName='email'>
+         </div>
+
+         <div class="input_wrapper">
+            <input [type]="show ? 'text' : 'password'" placeholder="Password" formControlName='password'>
+            <button mat-icon-button class="input_button" (click)='togglePassword()'>
+               <img src="../../../../../assets/images/bx_bxs-show.svg">
+            </button>
+         </div>
+
+         <div class="input_wrapper">
+            <input [type]="show ? 'text' : 'password'" placeholder="Submit Password" formControlName='submitpassword'>
+            <button mat-icon-button class="input_button" (click)='togglePassword()'>
+               <img src="../../../../../assets/images/bx_bxs-show.svg">
+            </button>
+         </div>
+
+         <div class="input_line">
+            <div class="input_wrapper input_wrapper-half">
+               <input type="text" placeholder="Firstname" formControlName='firstName'>
+            </div>
+
+            <div class="input_wrapper input_wrapper-half">
+               <input type="text" placeholder="Lastname" formControlName='lastName'>
+            </div>
+         </div>
+
+         <div class="input_line">
+            <div class="input_wrapper input_wrapper-half">
+               <input type="tel" placeholder="Phonenumber" formControlName='phonenumber'>
+            </div>
+
+            <div class="input_wrapper input_wrapper-half">
+               <input type="text" matInput [matDatepicker]="dirthDatePicker" disabled placeholder="Birth date" formControlName='birthDate'>
+               <mat-datepicker-toggle matSuffix [for]="dirthDatePicker" class="input_button"></mat-datepicker-toggle>
+               <mat-datepicker #dirthDatePicker color="primary" disabled="false"></mat-datepicker>
+            </div>
+         </div>
+
+         <mat-checkbox class="main_color_text" formControlName='acceptPP'>Accept Privacy Policy and Terms & Conditions</mat-checkbox>
+
+         <button type="button" mat-button class="main_btn main_btn-s" (click) = 'onRegister()'>register</button>
+      </form>
+   </div>
+</div>

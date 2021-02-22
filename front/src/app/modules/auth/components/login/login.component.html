@@ -1,0 +1,21 @@
+<div class="page_wrapper">
+   <div class="auth_alert">
+      <form [formGroup] = 'loginForm'>
+         <h2>Enter to system</h2>
+
+         <div class="input_wrapper">
+            <input type="email" placeholder="Email" formControlName='email'>
+         </div>
+
+         <div class="input_wrapper">
+            <input [type]="show ? 'text' : 'password'" placeholder="Password" formControlName='password'>
+            <button mat-icon-button class="input_button" (click) = 'togglePassword()'>
+               <img src="../../../../../assets/images/bx_bxs-show.svg">
+            </button>
+         </div>
+         <p class="main_color_text" [routerLink] = "['/registration']">Dont have accoutn? Sign up</p>
+
+         <button type="button" mat-button class="main_btn main_btn-s" (click) = 'onLogin()'>login</button>
+      </form>
+   </div>
+</div>

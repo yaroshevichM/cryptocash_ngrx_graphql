@@ -1,0 +1,45 @@
+<div class="accounts__component">
+   <div class="accounts__component__header">
+      <p class="accounts__component__headline">Your accounts</p>
+      <button mat-button class="main_btn main_btn-s" [routerLink] = "['/layout/create-account']">create</button>
+   </div>
+
+   <div class="accounts__component__card-list">
+      <div class="accounts__component__card-list__item" *ngFor = 'let card of allCards'>
+         <div class="card__preview">
+            <div class="card__preview__info">
+               <p class="cardType">{{ card?.cardType }}{{ card?.currencyType }}</p>
+               <img src="../../../../../assets/images/chip.svg">
+            </div>
+            <div class="card__preview__info">
+               <div class="card__preview__info__block">
+                  <h4>Card holder</h4>
+                  <h5>{{userData?.firstName}} {{userData?.lastName}}</h5>
+               </div>
+
+               <div class="card__preview__info__block">
+                  <h4>Exp. Date</h4>
+                  <h5>{{ card.expirationDate | date: "MM/yy" }}</h5>
+               </div>
+            </div>
+         </div>
+
+         <div class="card__preview__short-details">
+            <div class="card__preview__short-details__header">
+               <p class="card__preview__short-details__cardname">{{ card.name }}</p>
+               <p class="card__preview__short-details__currency">{{ card.balance }} {{ card.currencyType }}</p>
+            </div>
+            <div class="card__preview__short-details__creation-date">
+               <h4>Creation Date</h4>
+               <h5>{{ card.creationDate | date: "dd/MM/yyyy" }}</h5>
+            </div>
+            <div class="card__preview__short-details__actions">
+               <button mat-button class="main_btn main_btn-r" (click) = 'deleteCard(card._id)'>
+                  <img src="../../../../../assets/images/trash.svg">
+               </button>
+               <button mat-stroked-button class="main_btn main_btn-s" (click) = 'openCardDetails(card._id)'>info</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

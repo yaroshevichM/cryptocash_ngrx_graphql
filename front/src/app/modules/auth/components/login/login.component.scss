@@ -1,0 +1,26 @@
+.page_wrapper {
+   background-image: url("../../../../../assets/images/cryptobg.png");
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   .input_wrapper {
+      &:last-of-type {
+         margin-bottom: 5px;
+      }
+
+      &:first-of-type {
+         margin-top: 0px;
+      }
+   }
+
+   .main_color_text {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.6vw;
+      cursor: pointer;
+      align-self: flex-end;
+      margin-bottom: 1.4vw;
+   }
+}

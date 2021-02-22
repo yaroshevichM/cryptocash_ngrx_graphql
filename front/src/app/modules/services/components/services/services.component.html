@@ -1,0 +1,18 @@
+<div class="services__component">
+   <div class="services__component__header">
+      <p class="services__component__headline">Services</p>
+   </div>
+
+   <div class="services__component__details">
+      <div class="services__component__details__element" *ngFor='let service of servicesData' (click) = 'loadTerminal(service)'>
+         <img src="../../../../../assets/images/anotherAccount.svg" *ngIf="service.name === 'To another account'">
+         <img src="../../../../../assets/images/market.svg" *ngIf="service.name === 'Market'">
+         <img src="../../../../../assets/images/health.svg" *ngIf="service.name === 'Health'">
+         <img src="../../../../../assets/images/buisness.svg" *ngIf="service.name === 'Buisness'">
+         <img src="../../../../../assets/images/payments.svg" *ngIf="service.name === 'Payments'">
+         <img src="../../../../../assets/images/insurance.svg" *ngIf="service.name === 'Insurance'">
+
+         <p>{{service.name}}</p>
+      </div>
+   </div>
+</div>

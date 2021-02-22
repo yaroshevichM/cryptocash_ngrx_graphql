@@ -1,0 +1,8 @@
+<div class="snackbar__wrapper">
+   <img src="../../../../../assets/images/warning.svg" *ngIf = "type === 'error'">
+   <img src="../../../../../assets/images/success.svg" *ngIf = "type === 'success'">
+   <div class="snackbar__text">
+      <h4 [ngStyle]="{ 'color': (type === 'success' ? '#4BA94F' : '#C73F3F') }">{{ type === "success" ? "Success!" : "Ooops... Error!"}}</h4>
+      <p [ngStyle]="{ 'color': (type === 'success' ? '#4BA94F' : '#C73F3F') }">{{text}}</p>
+   </div>
+</div>

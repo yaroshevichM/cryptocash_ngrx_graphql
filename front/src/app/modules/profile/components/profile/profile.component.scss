@@ -1,0 +1,130 @@
+.profile__component {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   background: #ffffff;
+   box-shadow: 0px 0px 25px 5px rgba(165, 165, 165, 0.25);
+   border-radius: 10px;
+   padding: 2.6vw 3vw 1vw 3vw;
+   position: relative;
+
+   .profile_image {
+      position: absolute;
+      width: 25.5vw;
+      right: 5%;
+      top: 25%;
+   }
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.6vw;
+   }
+
+   &__headline {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6vw;
+      color: #000000;
+   }
+
+   &__details {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      &__general {
+         display: flex;
+         margin-bottom: 3.4vw;
+
+         &__avatar {
+            width: 17.1vw;
+            height: 17.1vw;
+            background: #c4c4c4;
+            border-radius: 10px;
+            margin-right: 1.5vw;
+         }
+
+         &__info {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+               font-family: Montserrat;
+               font-style: normal;
+               font-weight: 500;
+               font-size: 1.45vw;
+               line-height: 1.7vw;
+               letter-spacing: 0.065em;
+               color: #000000;
+               margin-bottom: 0.5vw;
+            }
+
+            h3 {
+               font-family: Montserrat;
+               font-style: normal;
+               font-weight: normal;
+               font-size: 1vw;
+               line-height: 1.25vw;
+               letter-spacing: 0.065em;
+               color: #7f3997;
+               margin-bottom: 2vw;
+            }
+
+            h4 {
+               font-family: Montserrat;
+               font-style: normal;
+               font-weight: normal;
+               font-size: 0.7vw;
+               line-height: 0.8vw;
+               color: #8e8e8e;
+               margin-bottom: 0.25vw;
+            }
+
+            h5 {
+               font-family: Montserrat;
+               font-style: normal;
+               font-weight: normal;
+               font-size: 0.9vw;
+               line-height: 1.14vw;
+               color: #000000;
+               margin-bottom: 1vw;
+            }
+
+            button {
+               margin-top: auto;
+               max-width: 9.3vw;
+            }
+         }
+      }
+
+      &__form {
+         display: flex;
+         flex-direction: column;
+
+         .profile__component__header {
+            margin-bottom: 1vw;
+         }
+
+         form {
+            display: flex;
+            flex-wrap: wrap;
+
+            .input_wrapper {
+               max-width: 23.4vw;
+               display: flex;
+               flex-direction: column;
+               justify-content: flex-end;
+               margin-right: 2vw;
+            }
+
+            button {
+               height: 68px;
+            }
+         }
+      }
+   }
+}

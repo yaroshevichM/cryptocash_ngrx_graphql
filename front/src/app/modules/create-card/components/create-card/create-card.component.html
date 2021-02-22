@@ -1,0 +1,34 @@
+<div class="create-card__component">
+   <div class="create-card__component__header">
+      <p class="create-card__component__headline">Create new account</p>
+   </div>
+   <div class="create-card__component__details">
+      <form [formGroup] = "createCardForm">
+         <div class="input_wrapper">
+            <h3>Choose a type of account</h3>
+            <mat-select placeholder="Choose type" formControlName='cardType'>
+               <mat-option value="Standard">Standard</mat-option>
+               <mat-option value="Premium">Premium</mat-option>
+             </mat-select>
+         </div>
+
+         <div class="input_wrapper">
+            <h3>Choose a account currency</h3>
+            <mat-select placeholder="Choose type" formControlName='currencyType'>
+               <mat-option value="{{option.type}}" *ngFor="let option of currencyTypes">{{ option.name }} ({{ option.type }})</mat-option>
+             </mat-select>
+         </div>
+
+         <div class="input_wrapper">
+            <h3>Enter account’s name</h3>
+            <input type="email" placeholder="Enter name" formControlName='name'>
+         </div>
+
+         <mat-checkbox class="main_color_text" formControlName='acceptPP'>Accept Privacy Policy and Terms & Conditions</mat-checkbox>
+
+         <button mat-button type="button" class="main_btn" (click) = 'createCard()'>create</button>
+
+      </form>
+      <img src="../../../../../assets/images/create_card.svg">
+   </div>
+</div>

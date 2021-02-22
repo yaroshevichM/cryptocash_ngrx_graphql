@@ -1,0 +1,106 @@
+<div class="inner__page__component dashboard__component">
+   <div class="dashboard__component__part--large">
+      <div class="dashboard__component__part--large--up">
+         <div class="dashboard__component__part--large--up--left">
+            <div class="dashboard__component__currency-info">
+               <div class="dashboard__component__currency-info__general">
+                  <p class="dashboard__component__headline">Balance</p>
+                  <p class="dashboard__component__currency-info__general__currency">{{userBalanceData?.generalInUSD }}$</p>
+               </div>
+
+               <div class="dashboard__component__currency-info__details">
+                  <div class="dashboard__component__currency-info__details__element" *ngFor = "let currencyElement of userBalanceData?.currencyList">
+                     <img src="../../../../../assets/images/bitcoin.svg" *ngIf = "currencyElement?.type === 'BTC'">
+                     <img src="../../../../../assets/images/eos.svg" *ngIf = "currencyElement?.type === 'EOS'">
+                     <img src="../../../../../assets/images/ethereum.svg" *ngIf = "currencyElement?.type === 'ETH'">
+                     <img src="../../../../../assets/images/iota.svg" *ngIf = "currencyElement?.type === 'IOT'">
+                     <img src="../../../../../assets/images/augur.svg" *ngIf = "currencyElement?.type === 'REP'">
+                     <img src="../../../../../assets/images/litecoin.svg" *ngIf = "currencyElement?.type === 'LTC'">
+
+                     <p>{{currencyElement?.balance}}</p>
+                  </div>
+
+                  <!-- <div class="dashboard__component__currency-info__details__element">
+                     <p>13,400</p>
+                  </div>
+
+                  <div class="dashboard__component__currency-info__details__element">
+                     <p>13,400</p>
+                  </div>
+
+                  <div class="dashboard__component__currency-info__details__element">
+                     <p>13,400</p>
+                  </div>
+
+                  <div class="dashboard__component__currency-info__details__element">
+                     <p>13,400</p>
+                  </div>
+
+                  <div class="dashboard__component__currency-info__details__element">
+                     <p>13,400</p>
+                  </div> -->
+               </div>
+            </div>
+         </div>
+         <div class="dashboard__component__part--large--up--right">
+            <div class="dashboard__component__exchange-rates">
+               <div class="dashboard__component__exchange-rates__general">
+                  <p class="dashboard__component__headline">Exchange Rates</p>
+               </div>
+               <div class="dashboard__component__exchange-rates__details">
+                  <div class="dashboard__component__exchange-rates__details__element" *ngFor="let exchangePair of exchangeRatesData">
+                     <p>1 {{exchangePair.type}}</p>
+                     <p>{{exchangePair.USD}} $</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="dashboard__component__part--large--down">
+         <div class="dashboard__component__services">
+            <p class="dashboard__component__headline">Services</p>
+            <div class="dashboard__component__services__details">
+               <div class="dashboard__component__services__details__element" *ngFor = 'let service of servicesData' (click) = 'loadTerminal(service)'>
+                  <img src="../../../../../assets/images/anotherAccount.svg" *ngIf = "service.name === 'To another account'">
+                  <img src="../../../../../assets/images/market.svg" *ngIf = "service.name === 'Market'">
+                  <img src="../../../../../assets/images/health.svg" *ngIf = "service.name === 'Health'">
+                  <img src="../../../../../assets/images/buisness.svg" *ngIf = "service.name === 'Buisness'">
+                  <img src="../../../../../assets/images/payments.svg" *ngIf = "service.name === 'Payments'">
+                  <img src="../../../../../assets/images/insurance.svg" *ngIf = "service.name === 'Insurance'">
+
+                  <p>{{ service.name }}</p>
+               </div>
+
+            </div>
+            <button mat-stroked-button class="main_btn main_btn-s" [routerLink] = "['/layout/services']">more</button>
+         </div>
+      </div>
+   </div>
+   <div class="dashboard__component__part--small">
+      <div class="dashboard__component__part--small--up">
+         <div class="dashboard__component__profile">
+            <p class="dashboard__component__headline">Your profile</p>
+            <div class="dashboard__component__profile__avatar"></div>
+            <p class="dashboard__component__profile__username">{{userData?.firstName}} {{userData?.lastName}}</p>
+            <p class="dashboard__component__profile__birthdate">{{userData?.birthDate | date: "dd.MM.yyyy"}}</p>
+            <p class="dashboard__component__profile__account-type">{{userData?.accountType }} account</p>
+            <button mat-stroked-button class="main_btn main_btn-s" [routerLink] = "['/layout/profile']">profile</button>
+         </div>
+      </div>
+      <div class="dashboard__component__part--small--down">
+         <div class="dashboard__component__transactions">
+            <p class="dashboard__component__headline">Last transactions</p>
+            <div class="transactions__list">
+               <div class="transactions__list__element" *ngFor = "let transaction of transactionsData">
+                  <div class="transactions__list__element__headline">
+                     <p class="transaction__headline">{{transaction.name}} {{transaction.creationDate | date: "dd.MM.yy"}}</p>
+                     <p class="income" *ngIf = "transaction.receiverId === userData._id">+{{transaction.transactionAmount}}{{transaction.currency}}</p>
+                     <p class="withdraw" *ngIf = "transaction.senderId === userData._id">-{{transaction.transactionAmount}}{{transaction.currency}}</p>
+                  </div>
+                  <p class="transaction__desc">{{transaction.description}}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="profile__component">
+  <div class="profile__component__header">
+    <p class="profile__component__headline">Your profile</p>
+  </div>
+
+  <div class="profile__component__details">
+    <div class="profile__component__details__general">
+      <div class="profile__component__details__general__avatar"></div>
+      <div class="profile__component__details__general__info">
+        <h2>{{userData.firstName}} {{userData.lastName}}</h2>
+        <h3>{{userData.accountType}} account</h3>
+
+        <h4>Creation Date</h4>
+        <h5>{{userData.creationDate | date: "dd.MM.yyyy"}}</h5>
+
+        <h4>Birth Date</h4>
+        <h5>{{userData.birthDate | date: "dd.MM.yyyy"}}</h5>
+
+        <button mat-button class="main_btn" (click) = 'toggleEditMode()'>edit</button>
+      </div>
+    </div>
+    <div class="profile__component__details__form">
+      <div class="profile__component__header">
+        <p class="profile__component__headline">Edit profile</p>
+      </div>
+      <form [formGroup]='editProfileForm' *ngIf='isEdit'>
+        <div class="input_wrapper">
+          <h3>Choose a type of profile</h3>
+          <mat-select placeholder="Choose type" formControlName = 'accountType'>
+            <mat-option value="Standard">Standard</mat-option>
+            <mat-option value="Premium">Premium</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="input_wrapper">
+          <h3>Enter your email</h3>
+          <input type="email" placeholder="Enter email" formControlName = 'email'>
+        </div>
+
+        <div class="input_wrapper">
+          <h3>Enter your phone number</h3>
+          <input type="email" placeholder="Enter phonenumber" formControlName = 'phonenumber'>
+        </div>
+
+        <div class="input_wrapper" (click) = 'updateUserData()'>
+          <button mat-button class="main_btn">save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <img src="../../../../../assets/images/profile.svg" class="profile_image">
+</div>

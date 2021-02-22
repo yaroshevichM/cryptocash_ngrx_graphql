@@ -1,0 +1,268 @@
+.dashboard__component {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   // background-color: wheat;
+
+   &__headline {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.45vw;
+      color: #000000;
+      align-self: flex-start;
+   }
+
+   &__part {
+      display: flex;
+      flex-direction: column;
+
+      &--large {
+         display: flex;
+         flex-direction: column;
+         width: 46.6vw;
+         height: 100%;
+
+         &--up {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 19.75vw;
+
+            &--left {
+               width: 25.5vw;
+               height: 100%;
+               background-color: white;
+               box-shadow: 0px 0px 25px 5px rgba(165, 165, 165, 0.25);
+               border-radius: 10px;
+            }
+
+            &--right {
+               width: 18.8vw;
+               height: 100%;
+               background-color: white;
+               box-shadow: 0px 0px 25px 5px rgba(165, 165, 165, 0.25);
+               border-radius: 10px;
+            }
+         }
+
+         &--down {
+            width: 46.6vw;
+            height: 23.3vw;
+            margin: 2.3vw 0 0 0;
+            background-color: white;
+            box-shadow: 0px 0px 25px 5px rgba(165, 165, 165, 0.25);
+            border-radius: 10px;
+         }
+      }
+
+      &--small {
+         width: 26.7vw;
+         height: 100%;
+         margin-left: 2vw;
+         display: flex;
+         flex-direction: column;
+
+         &--up {
+            width: 100%;
+            height: 27.5vw;
+            background-color: white;
+            box-shadow: 0px 0px 25px 5px rgba(165, 165, 165, 0.25);
+            border-radius: 10px;
+            margin-bottom: 2.3vw;
+         }
+
+         &--down {
+            width: 100%;
+            height: 15.6vw;
+            background-color: white;
+            box-shadow: 0px 0px 25px 5px rgba(165, 165, 165, 0.25);
+            border-radius: 10px;
+         }
+      }
+   }
+
+   &__currency-info {
+      display: flex;
+      flex-direction: column;
+      padding: 2vw 2.3vw 2.3vw 2.3vw;
+
+      &__general {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         &__currency {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.15vw;
+            color: #7f3997;
+         }
+      }
+
+      &__details {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+
+         &__element {
+            margin-top: 1.3vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 3vw;
+
+
+            &:nth-child(3) {
+               margin-right: 0;
+            }
+
+            &:nth-child(6) {
+               margin-right: 0;
+            }
+
+            img {
+               width: 4vw;
+               height: 4vw;
+               margin-bottom: 0.6vw;
+            }
+
+            p {
+               font-family: Montserrat;
+               font-style: normal;
+               font-weight: normal;
+               font-size: 0.8vw;
+               color: #000000;
+            }
+         }
+      }
+   }
+
+   &__exchange-rates {
+      padding: 2vw 2.3vw 2.3vw 2.3vw;
+      display: flex;
+      flex-direction: column;
+
+      &__details {
+         display: flex;
+         flex-direction: column;
+         margin-top: 1vw;
+
+         &__element {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1vw;
+
+            &:last-child {
+               margin-bottom: 0;
+            }
+
+            p {
+               font-family: Montserrat;
+               font-style: normal;
+               font-weight: 500;
+               font-size: 1vw;
+               line-height: 1.25vw;
+               color: #000000;
+            }
+         }
+      }
+   }
+
+   &__services {
+      display: flex;
+      flex-direction: column;
+      padding: 2vw 2.3vw 2.3vw 2.3vw;
+
+      &__details {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         margin-top: 0.26vw;
+
+         &__element {
+            display: flex;
+            background: rgba(81, 81, 81, 0.08);
+            border-radius: 16px;
+            padding: 2vw 1.3vw;
+            width: 13.2vw;
+            margin-top: 1vw;
+            align-items: center;
+            cursor: pointer;
+
+            img {
+               margin-right: 0.78vw;
+            }
+
+            p {
+               font-family: Montserrat;
+               font-style: normal;
+               font-weight: normal;
+               font-size: 0.8vw;
+               line-height: 1vw;
+               color: #000000;
+            }
+         }
+      }
+
+      .main_btn {
+         align-self: center;
+         margin-top: 0.8vw;
+      }
+   }
+
+   &__profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 2vw 2.3vw 2.3vw 2.3vw;
+
+      &__avatar {
+         width: 7.5vw;
+         height: 7.5vw;
+         border-radius: 10px;
+         margin: 3vw auto 1.8vw auto;
+         background-image: url('../../../../../assets/images/avatar.png');
+         background-size: cover;
+      }
+
+      &__username {
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: 500;
+         font-size: 1.15vw;
+         color: #000000;
+         margin-bottom: 0.4vw;
+      }
+
+      &__birthdate {
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 0.8vw;
+         color: #000000;
+         margin-bottom: 0.6vw;
+      }
+
+      &__account-type {
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 0.8vw;
+         color: #7f3997;
+         margin-bottom: 2vw;
+      }
+   }
+
+   &__transactions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 2vw 2.3vw 2.3vw 2.3vw;
+      overflow-y: scroll;
+   }
+}

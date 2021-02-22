@@ -1,0 +1,36 @@
+<app-loader *ngIf = 'loaderService.isLoaderShow'></app-loader>
+<div class="layout__wrapper">
+   <div class="layout__menu">
+      <div class="logo"></div>
+
+      <div class="layout__navigation">
+         <div class="layout__navigation__element" [routerLink] = "['/layout/dashboard']" routerLinkActive = 'layout__navigation__element--active'>
+            <img src="../../../../../assets/images/dashboard_ico.svg">
+            <p>Dashboard</p>
+         </div>
+
+         <div class="layout__navigation__element" [routerLink] = "['/layout/accounts']" routerLinkActive = 'layout__navigation__element--active'>
+            <img src="../../../../../assets/images/accounts_ico.svg">
+            <p>Accounts</p>
+         </div>
+
+         <div class="layout__navigation__element" [routerLink] = "['/layout/services']" routerLinkActive = 'layout__navigation__element--active'>
+            <img src="../../../../../assets/images/services_ico.svg">
+            <p>Services</p>
+         </div>
+
+         <div class="layout__navigation__element" [routerLink] = "['/layout/profile']" routerLinkActive = 'layout__navigation__element--active'>
+            <img src="../../../../../assets/images/profile_ico.svg">
+            <p>Profile</p>
+         </div>
+
+         <div class="layout__navigation__element" (click) = 'logOut()'>
+            <img src="../../../../../assets/images/exit_ico.svg">
+            <p>Log out</p>
+         </div>
+      </div>
+   </div>
+   <div class="layout__content">
+      <router-outlet></router-outlet>
+   </div>
+</div>
